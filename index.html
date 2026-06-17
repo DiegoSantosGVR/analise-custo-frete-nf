@@ -118,6 +118,10 @@
   .yr li:before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--c24)}
   .yr.y25 li:before{background:var(--c25)}.yr.y26 li:before{background:var(--c26)}
   .yr li b{font-weight:600}
+  .yr .ind{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:12.5px;color:var(--ink2)}
+  .yr .ind:last-of-type{margin-bottom:12px}
+  .yr .ind b{font-family:'Archivo';font-weight:700;font-size:14px;color:var(--ink)}
+  .yr .ind .src{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:1px solid var(--hair);border-radius:5px;padding:1px 5px}
 
   .note{font-size:12px;color:var(--muted);background:#FBF7F2;border:1px solid #EEDFCB;border-radius:10px;padding:12px 15px;margin-top:14px}
   .note b{color:var(--amber)}
@@ -228,24 +232,30 @@
     </div>
 
     <div class="vhead" style="margin-top:30px"><span class="eyebrow">Contexto setorial</span>
-      <h2 style="font-size:19px">Dinâmicas de mercado que pressionaram o frete em cada ano</h2></div>
+      <h2 style="font-size:19px">Dinâmicas de mercado que pressionaram o frete em cada ano</h2>
+      <p style="color:var(--muted);font-size:13.5px;max-width:860px;margin-top:5px">Vale o contraste: de 2024 para 2025, a inflação caiu (4,83% → 4,26%) e o diesel ficou praticamente estável (~R$ 6,01 → ~R$ 6,15/L), mas o frete/NF subiu +23,8% — a pressão veio da disputa do agro pela frota, não de combustível nem de inflação. Já em 2026 o diesel disparou (média parcial ~R$ 6,86/L, com pico acima de R$ 7,50 na bomba em março), reativando a pressão de custo.</p></div>
     <div class="macro">
       <div class="yr"><div class="ylbl">2024</div><div class="ystat">Frete/NF 2,56% · base</div>
+        <div class="ind">IPCA 2024 <b>4,83%</b> <span class="src">IBGE</span></div>
+        <div class="ind">Diesel S10 <b>R$ 6,01/L</b> <span class="src">ANP</span></div>
         <ul>
           <li><b>Câmbio pressionado:</b> a alta do dólar encarece insumos do transporte com forte componente importado — diesel, pneus, peças de reposição e veículos.</li>
           <li><b>Inflação repassada:</b> reajustes anuais de contrato incorporados às tabelas de frete.</li>
           <li><b>Piso mínimo de frete (ANTT):</b> atualizado periodicamente e atrelado ao diesel — qualquer movimento do combustível se transmite ao frete.</li>
         </ul></div>
       <div class="yr y25"><div class="ylbl">2025</div><div class="ystat">Frete/NF 3,17% · +0,61 p.p. · "ano do agro"</div>
+        <div class="ind">IPCA 2025 <b>4,26%</b> <span class="src">IBGE</span></div>
+        <div class="ind">Diesel S10 <b>R$ 6,15/L</b> <span class="src">ANP</span></div>
         <ul>
           <li><b>Competição do agro pela frota:</b> safras recordes absorveram caminhões para escoar grãos aos portos (Santos, Paranaguá). Sobrou menos caminhão — e mais caro — para indústria e varejo, por isso o frete subiu mesmo com diesel estável.</li>
           <li><b>Carrocerias graneleiras puxando o índice:</b> os fretes de commodities lideraram os reajustes e elevaram o índice nacional.</li>
           <li><b>Custo de manutenção:</b> pneus, peças importadas e lubrificantes acumularam inflação (efeito câmbio), forçando repasse às tabelas.</li>
         </ul></div>
       <div class="yr y26"><div class="ylbl">2026*</div><div class="ystat">Frete/NF 3,21% · parcial (jan–jun)</div>
+        <div class="ind">Diesel S10 <b>R$ 6,86/L</b> <span class="src">ANP · parcial</span></div>
         <ul>
           <li><b>Pressão regulatória:</b> atualização periódica da tabela de piso mínimo da ANTT no início do ano pressiona as tabelas de frete.</li>
-          <li><b>Custo de combustível:</b> pelo mecanismo legal, o piso é reajustado quando o diesel varia acima do gatilho — choques de combustível se transmitem rápido ao frete.</li>
+          <li><b>Custo de combustível em alta:</b> o diesel S10 na bomba saltou de ~R$ 6,1 para acima de R$ 7,5 no início de 2026 (ANP), reativando o gatilho de reajuste do piso da ANTT — choques de combustível se transmitem rápido ao frete.</li>
           <li><b>ICMS sobre combustíveis:</b> alíquotas estaduais limitam o alívio nos preços de bomba.</li>
         </ul></div>
     </div>
