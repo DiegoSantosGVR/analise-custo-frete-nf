@@ -52,6 +52,16 @@
   .kpi .row .k{color:#9DB0C2}
   .kpi .row .v{font-weight:600}
   .dlt.up{color:#FCA877}.dlt.flat{color:#9DB0C2}
+  .ytd{margin-top:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 18px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .ytd .ytd-lbl{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:#9DB0C2;line-height:1.4}
+  .ytd .ytd-lbl b{display:block;color:#fff;font-family:'Archivo';font-weight:600;font-size:12.5px;letter-spacing:.02em;text-transform:none}
+  .ytd .ytd-vals{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+  .ytd .yv{display:flex;flex-direction:column}
+  .ytd .yv .y{font-size:11px;color:#9DB0C2;letter-spacing:.04em}
+  .ytd .yv .p{font-family:'Archivo';font-weight:700;font-size:21px;color:#C9D6E2}
+  .ytd .yv .sub{font-size:10.5px;color:#8497A8;margin-top:1px}
+  .ytd .yv.now .p{color:#FCA877}
+  .ytd .yv.now .y{color:#FCA877}
 
   /* NAV */
   nav{position:sticky;top:0;z-index:20;background:var(--surf);border-bottom:1px solid var(--hair);box-shadow:0 1px 0 rgba(0,0,0,.02)}
@@ -92,6 +102,11 @@
   .met .v{font-family:'Archivo';font-weight:700;font-size:24px;margin-top:4px}
   .met .d{font-size:12px;margin-top:2px;font-weight:500}
   .d.up{color:var(--up)}.d.ok{color:var(--ok)}.d.flat{color:var(--muted)}
+  .grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card.mini{padding:16px 18px 14px;margin-bottom:0}
+  .card.mini h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card.mini .badge{font-family:'Inter';font-weight:600;font-size:11px;color:var(--orange);background:#FBEDE4;border-radius:20px;padding:2px 9px}
+  @media(max-width:840px){.grid4{grid-template-columns:1fr}}
 
   /* legend */
   .legend{display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:12px}
@@ -168,30 +183,38 @@
     <div class="kpis">
       <div class="kpi">
         <div class="yr-lbl">2024</div>
-        <div class="val num">2,56%</div>
+        <div class="val num">2,53%</div>
         <div class="dlt flat">frete/NF · linha de base</div>
         <div class="rows">
-          <div class="row"><span class="k">Frete pago</span><span class="v num">R$ 2,45 mi</span></div>
+          <div class="row"><span class="k">Frete pago</span><span class="v num">R$ 2,42 mi</span></div>
           <div class="row"><span class="k">NF transportada</span><span class="v num">R$ 95,8 mi</span></div>
         </div>
       </div>
       <div class="kpi">
         <div class="yr-lbl">2025</div>
-        <div class="val num">3,17%</div>
-        <div class="dlt up">▲ +23,8% vs 2024</div>
+        <div class="val num">3,13%</div>
+        <div class="dlt up">▲ +23,7% vs 2024</div>
         <div class="rows">
-          <div class="row"><span class="k">Frete pago</span><span class="v num">R$ 3,48 mi</span></div>
+          <div class="row"><span class="k">Frete pago</span><span class="v num">R$ 3,43 mi</span></div>
           <div class="row"><span class="k">NF transportada</span><span class="v num">R$ 109,8 mi</span></div>
         </div>
       </div>
       <div class="kpi">
         <div class="yr-lbl">2026 · parcial</div>
-        <div class="val num">3,21%</div>
-        <div class="dlt up">▲ +1,5% vs 2025</div>
+        <div class="val num">3,18%</div>
+        <div class="dlt up">▲ +1,6% vs 2025</div>
         <div class="rows">
-          <div class="row"><span class="k">Frete pago</span><span class="v num">R$ 1,14 mi</span></div>
+          <div class="row"><span class="k">Frete pago</span><span class="v num">R$ 1,12 mi</span></div>
           <div class="row"><span class="k">NF transportada</span><span class="v num">R$ 35,4 mi</span></div>
         </div>
+      </div>
+    </div>
+    <div class="ytd">
+      <div class="ytd-lbl">Mesmo período · acumulado<b>1 jan → 2 jun · como 2026 se compara</b></div>
+      <div class="ytd-vals">
+        <div class="yv"><span class="y">2024</span><span class="p num">2,38%</span><span class="sub num">R$ 0,81 mi / R$ 34,2 mi</span></div>
+        <div class="yv"><span class="y">2025</span><span class="p num">3,16%</span><span class="sub num">R$ 1,27 mi / R$ 40,3 mi</span></div>
+        <div class="yv now"><span class="y">2026</span><span class="p num">3,18%</span><span class="sub num">R$ 1,12 mi / R$ 35,4 mi</span></div>
       </div>
     </div>
   </div>
@@ -216,7 +239,7 @@
       <p>O percentual de frete sobre a NF saiu de ~2,5% em 2024 para ~3,2% em 2025 e 2026. O salto ocorreu na virada de 2024 para 2025 — não é sazonalidade, é mudança de nível.</p>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
-      <p>O aumento de <strong>+0,65 ponto percentual</strong> (de 2,56% para 3,21%) representa, sobre o volume atual de NF, cerca de <strong>R$ 1,5 milhão/ano</strong> a mais em frete caso o patamar se mantenha. A boa notícia: o crescimento <strong>estabilizou</strong> em 2026 (+1,5% vs 2025), o que indica acomodação e não escalada contínua.</p>
+      <p>O aumento de <strong>+0,65 ponto percentual</strong> (de 2,53% para 3,18%) representa, sobre o volume atual de NF, cerca de <strong>R$ 715 mil/ano</strong> a mais em frete caso o patamar se mantenha. A boa notícia: o crescimento <strong>estabilizou</strong> em 2026 (+1,6% vs 2025), o que indica acomodação e não escalada contínua.</p>
     </div>
     <div class="card">
       <h3>Frete / NF por mês</h3><div class="csub">Linha cheia = percentual mensal · linha tracejada = média do ano</div>
@@ -233,9 +256,9 @@
 
     <div class="vhead" style="margin-top:30px"><span class="eyebrow">Contexto setorial</span>
       <h2 style="font-size:19px">Dinâmicas de mercado que pressionaram o frete em cada ano</h2>
-      <p style="color:var(--muted);font-size:13.5px;max-width:860px;margin-top:5px">Vale o contraste: de 2024 para 2025, a inflação caiu (4,83% → 4,26%) e o diesel ficou praticamente estável (~R$ 6,01 → ~R$ 6,15/L), mas o frete/NF subiu +23,8% — a pressão veio da disputa do agro pela frota, não de combustível nem de inflação. Já em 2026 o diesel disparou (média parcial ~R$ 6,86/L, com pico acima de R$ 7,50 na bomba em março), reativando a pressão de custo.</p></div>
+      <p style="color:var(--muted);font-size:13.5px;max-width:860px;margin-top:5px">Vale o contraste: de 2024 para 2025, a inflação caiu (4,83% → 4,26%) e o diesel ficou praticamente estável (~R$ 6,01 → ~R$ 6,15/L), mas o frete/NF subiu +23,7% — a pressão veio da disputa do agro pela frota, não de combustível nem de inflação. Já em 2026 o diesel disparou (média parcial ~R$ 6,86/L, com pico acima de R$ 7,50 na bomba em março), reativando a pressão de custo.</p></div>
     <div class="macro">
-      <div class="yr"><div class="ylbl">2024</div><div class="ystat">Frete/NF 2,56% · base</div>
+      <div class="yr"><div class="ylbl">2024</div><div class="ystat">Frete/NF 2,53% · base</div>
         <div class="ind">IPCA 2024 <b>4,83%</b> <span class="src">IBGE</span></div>
         <div class="ind">Diesel S10 <b>R$ 6,01/L</b> <span class="src">ANP</span></div>
         <ul>
@@ -243,7 +266,7 @@
           <li><b>Inflação repassada:</b> reajustes anuais de contrato incorporados às tabelas de frete.</li>
           <li><b>Piso mínimo de frete (ANTT):</b> atualizado periodicamente e atrelado ao diesel — qualquer movimento do combustível se transmite ao frete.</li>
         </ul></div>
-      <div class="yr y25"><div class="ylbl">2025</div><div class="ystat">Frete/NF 3,17% · +0,61 p.p. · "ano do agro"</div>
+      <div class="yr y25"><div class="ylbl">2025</div><div class="ystat">Frete/NF 3,13% · +0,60 p.p. · "ano do agro"</div>
         <div class="ind">IPCA 2025 <b>4,26%</b> <span class="src">IBGE</span></div>
         <div class="ind">Diesel S10 <b>R$ 6,15/L</b> <span class="src">ANP</span></div>
         <ul>
@@ -251,7 +274,7 @@
           <li><b>Carrocerias graneleiras puxando o índice:</b> os fretes de commodities lideraram os reajustes e elevaram o índice nacional.</li>
           <li><b>Custo de manutenção:</b> pneus, peças importadas e lubrificantes acumularam inflação (efeito câmbio), forçando repasse às tabelas.</li>
         </ul></div>
-      <div class="yr y26"><div class="ylbl">2026*</div><div class="ystat">Frete/NF 3,21% · parcial (jan–jun)</div>
+      <div class="yr y26"><div class="ylbl">2026*</div><div class="ystat">Frete/NF 3,18% · parcial (jan–jun)</div>
         <div class="ind">Diesel S10 <b>R$ 6,86/L</b> <span class="src">ANP · parcial</span></div>
         <ul>
           <li><b>Pressão regulatória:</b> atualização periódica da tabela de piso mínimo da ANTT no início do ano pressiona as tabelas de frete.</li>
@@ -259,7 +282,7 @@
           <li><b>ICMS sobre combustíveis:</b> alíquotas estaduais limitam o alívio nos preços de bomba.</li>
         </ul></div>
     </div>
-    <div class="note"><b>Nota metodológica.</b> Todos os valores de frete, NF e percentuais são extraídos integralmente da base da GVR (19.405 CT-e válidos; 62 registros com NF zerada foram excluídos por distorcerem a razão). Os fatores ao lado descrevem dinâmicas setoriais reais; eventuais números específicos (índices de frete, resoluções da ANTT, preços de diesel) devem ser citados com a fonte oficial caso a diretoria queira quantificá-los.<br><br><b>Quebra estrutural — e-commerce.</b> Até 2024 o frete de e-commerce constava nesta base (via CARRIERS, LOGGI e TOTAL EXPRESS); a partir de 2025 migrou para os Correios e saiu da base, criando uma quebra na série. Numa comparação like-for-like (excluindo o e-commerce dos três anos), o frete/NF vai de <b>2,39% (2024) → 3,18% (2025) → 3,27% (2026)</b> — alta de <b>+36,6%</b>, ainda maior que a da base completa. Ou seja, o e-commerce vinha segurando o índice de 2024 para cima.</div>
+    <div class="note"><b>Nota metodológica.</b> Todos os valores de frete, NF e percentuais são extraídos integralmente da base da GVR (19.064 CT-e válidos — excluídos registros com NF zerada e lançamentos com frete maior que a nota). Os fatores ao lado descrevem dinâmicas setoriais reais; eventuais números específicos (índices de frete, resoluções da ANTT, preços de diesel) devem ser citados com a fonte oficial caso a diretoria queira quantificá-los.<br><br><b>Quebra estrutural — e-commerce.</b> Até 2024 o frete de e-commerce constava nesta base (via CARRIERS, LOGGI e TOTAL EXPRESS); a partir de 2025 migrou para os Correios e saiu da base, criando uma quebra na série. Numa comparação like-for-like (excluindo o e-commerce dos três anos), o frete/NF vai de <b>2,37% (2024) → 3,14% (2025) → 3,23% (2026)</b> — alta de <b>+36,3%</b>, ainda maior que a da base completa. Ou seja, o e-commerce vinha segurando o índice de 2024 para cima.</div>
   </section>
 
   <!-- VIEW 2 -->
@@ -269,7 +292,7 @@
       <p>Frete/NF por transportadora e por ano. MOVVI (39% do gasto) e JAMEF (25%) concentram o volume; é nelas que está a maior alavanca de renegociação.</p>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
-      <p>A <strong>BRASPRESS</strong> saltou de 4,71% para <strong>7,10%</strong> e já é a transportadora mais cara em relação à NF — ~3x a MOVVI. Ela responde por 14% do gasto, então uma renegociação ou redirecionamento de rotas tem efeito relevante. A <strong>JAMEF</strong> sobe de forma constante (2,62% → 3,31%) e a <strong>MOVVI</strong>, após subir em 2025, recuou para 2,69% em 2026 — sinal de que renegociação funciona.</p>
+      <p>A <strong>BRASPRESS</strong> saltou de 4,63% para <strong>6,99%</strong> e já é a transportadora mais cara em relação à NF — ~2,6x a MOVVI. Ela responde por 14% do gasto, então uma renegociação ou redirecionamento de rotas tem efeito relevante. A <strong>JAMEF</strong> sobe de forma constante (2,58% → 3,25%) e a <strong>MOVVI</strong>, após subir em 2025, recuou para 2,66% em 2026 — sinal de que renegociação funciona.</p>
     </div>
     <div class="card">
       <h3>Frete / NF por transportadora e ano</h3><div class="csub">Apenas transportadoras com presença nos três anos exibem as três barras</div>
@@ -292,7 +315,7 @@
       <p>Quatro fluxos de destino. O percentual revela onde cada real de NF carrega mais custo logístico.</p>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
-      <p><strong>TRANSFERÊNCIA</strong> (movimentação interna) é estruturalmente o mais caro — ~5,4% — porque move mercadoria de baixo valor de nota. <strong>FORA SP</strong> teve o pico mais agudo em 2025 (4,29%), reflexo de distância e do piso ANTT. <strong>DENTRO SP</strong> é o mais barato e estável (~1,1%) — concentrar volume nesse fluxo derruba o custo médio.</p>
+      <p><strong>TRANSFERÊNCIA</strong> (movimentação interna) é estruturalmente o mais caro — ~4,9% — porque move mercadoria de baixo valor de nota. <strong>FORA SP</strong> teve o pico mais agudo em 2025 (4,22%), reflexo de distância e do piso ANTT. <strong>DENTRO SP</strong> é o mais barato e estável (~1,1%) — concentrar volume nesse fluxo derruba o custo médio.</p>
     </div>
     <div class="card">
       <h3>Frete / NF por região e ano</h3>
@@ -309,16 +332,19 @@
   <!-- VIEW 4 -->
   <section class="view" id="v4">
     <div class="vhead"><span class="eyebrow">04 · Por destinatário</span>
-      <h2>Quais destinos consomem mais frete</h2>
-      <p>Top 15 destinatários por valor pago de frete, com o respectivo percentual sobre a NF entregue.</p>
+      <h2>Top 10 destinatários dentro de cada responsável pelo frete</h2>
+      <p>Os quatro maiores responsáveis pelo frete e, em cada um, os 10 destinatários que mais consomem frete. Barra = frete pago · rótulo = % sobre a NF · cor: verde até 3% · âmbar 3–5% · vermelho acima de 5%.</p>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
-      <p><strong>DECORA VITTA</strong> aparece com frete/NF de <strong>15,67%</strong> — muito acima da média; vale investigar (provável retorno de beneficiamento ou notas de baixo valor com frete cheio). Entre as lojas próprias, <strong>GÁVEA</strong> (4,9%) e <strong>PONTEIO</strong> (4,4%) têm custo relativo acima do grupo, enquanto <strong>LOURDES</strong> e <strong>LEBLON</strong> ficam próximas de 3,2%.</p>
+      <p>Em <strong>MULTIMARCAS</strong>, a <strong>DECORA VITTA</strong> destoa de tudo (14,4% sobre NF) — é o ponto a investigar primeiro. Em <strong>HOTELARIA</strong>, o frete se distribui melhor, mas <strong>ALVES E LAGO</strong> (7,9%) chama atenção. No <strong>ESTOQUE CENTRAL</strong>, o próprio reabastecimento interno (5,0%) lidera, e <strong>DÉBORA BAKER</strong> aparece com 11,5%. O <strong>CORPORATIVO</strong> é o de menor custo (1,8%), com perfil saudável de destinatários B2B (Bradesco Saúde, Fraction, hospitais). Concentrar a auditoria nos destinatários vermelhos de cada bloco é o caminho mais rápido para reduzir o custo.</p>
     </div>
-    <div class="card">
-      <h3>Top 15 destinatários — frete pago × % sobre NF</h3><div class="csub">Cor da barra: ▮ verde até 3% · ▮ âmbar 3–5% · ▮ vermelho acima de 5%</div>
-      <div class="chartbox" id="box4"><canvas id="c4" role="img" aria-label="Barras horizontais dos 15 destinatários com maior frete pago"></canvas></div>
+    <div class="grid4">
+      <div class="card mini"><h3>HOTELARIA <span class="badge">frete/NF 2,8%</span></h3><div class="csub">R$ 1,70 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4a" role="img" aria-label="Top 10 destinatários de Hotelaria por frete"></canvas></div></div>
+      <div class="card mini"><h3>MULTIMARCAS <span class="badge">frete/NF 3,2%</span></h3><div class="csub">R$ 1,57 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4b" role="img" aria-label="Top 10 destinatários de Multimarcas por frete"></canvas></div></div>
+      <div class="card mini"><h3>ESTOQUE CENTRAL <span class="badge">frete/NF 2,9%</span></h3><div class="csub">R$ 0,49 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4c" role="img" aria-label="Top 10 destinatários de Estoque Central por frete"></canvas></div></div>
+      <div class="card mini"><h3>CORPORATIVO <span class="badge">frete/NF 1,8%</span></h3><div class="csub">R$ 0,25 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4d" role="img" aria-label="Top 10 destinatários de Corporativo por frete"></canvas></div></div>
     </div>
+    <div class="note"><b>Nota.</b> Lançamentos com frete maior que o valor da nota — erros de digitação — foram removidos de todos os blocos. Percentuais altos em destinatários pontuais (em vermelho, como a DECORA VITTA) indicam casos isolados a auditar, não o padrão da operação.</div>
   </section>
 
   <!-- VIEW 5 -->
@@ -328,12 +354,12 @@
       <p>O frete/NF é uma razão. Ele pode subir porque o frete ficou mais caro (numerador) ou porque a carga transportada passou a valer menos por quilo (denominador). Separar os dois mostra o que é custo de mercado e o que é mix comercial.</p>
     </div>
     <div class="metrics">
-      <div class="met"><div class="l">Preço do frete (R$/kg)</div><div class="v num">3,29 → 3,73</div><div class="d up">▲ +13,4%</div></div>
-      <div class="met"><div class="l">Valor da carga (R$ NF/kg)</div><div class="v num">128 → 116</div><div class="d up">▼ −9,6%</div></div>
-      <div class="met"><div class="l">Efeito combinado</div><div class="v num">+25,4%</div><div class="d up">no frete/NF</div></div>
+      <div class="met"><div class="l">Preço do frete (R$/kg)</div><div class="v num">3,26 → 3,71</div><div class="d up">▲ +13,8%</div></div>
+      <div class="met"><div class="l">Valor da carga (R$ NF/kg)</div><div class="v num">129 → 117</div><div class="d up">▼ −9,4%</div></div>
+      <div class="met"><div class="l">Efeito combinado</div><div class="v num">+25,7%</div><div class="d up">no frete/NF</div></div>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
-      <p>Cerca de <strong>55% do aumento</strong> vem do <strong>preço por quilo</strong> subindo de verdade (diesel, câmbio, piso ANTT, reajustes) — é custo de mercado, atacável via <strong>renegociação de tabela</strong>. Os outros <strong>~45%</strong> vêm de a empresa estar transportando carga de <strong>menor valor por quilo</strong> — é efeito de <strong>mix comercial</strong>, que logística não controla sozinha. Atacar só o frete resolve metade do problema; a outra metade é uma conversa com o comercial sobre o que está sendo embarcado.</p>
+      <p>Cerca de <strong>57% do aumento</strong> vem do <strong>preço por quilo</strong> subindo de verdade (diesel, câmbio, piso ANTT, reajustes) — é custo de mercado, atacável via <strong>renegociação de tabela</strong>. Os outros <strong>~43%</strong> vêm de a empresa estar transportando carga de <strong>menor valor por quilo</strong> — é efeito de <strong>mix comercial</strong>, que logística não controla sozinha. Atacar só o frete resolve metade do problema; a outra metade é uma conversa com o comercial sobre o que está sendo embarcado.</p>
     </div>
     <div class="card">
       <h3>Índice 100 = 2024</h3><div class="csub">Como cada componente evoluiu em relação à base</div>
@@ -353,7 +379,7 @@
       <p>Frete/NF por unidade responsável pelo frete e por ano — útil para responsabilizar e priorizar planos de ação por área.</p>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
-      <p><strong>MULTIMARCAS</strong> e <strong>HOTELARIA</strong> concentram o maior gasto absoluto e ambas sobem de forma consistente (chegando a ~3,8% e 3,4% em 2026) — são as unidades onde o plano de ação tem maior efeito. <strong>GÁVEA</strong> e <strong>PONTEIO</strong> tiveram picos em 2025 (6,6% e 5,4%) e recuaram; vale entender o que mudou e replicar.</p>
+      <p><strong>MULTIMARCAS</strong> e <strong>HOTELARIA</strong> concentram o maior gasto absoluto e ambas sobem de forma consistente (chegando a ~3,8% e 3,4% em 2026) — são as unidades onde o plano de ação tem maior efeito. <strong>GÁVEA</strong> e <strong>PONTEIO</strong> tiveram picos em 2025 (6,4% e 5,4%) e recuaram; vale entender o que mudou e replicar.</p>
     </div>
     <div class="card">
       <h3>Frete / NF por unidade e ano</h3>
@@ -375,15 +401,15 @@
     </div>
 
     <div class="target">
-      <div class="box"><div class="t">Patamar atual 2026</div><div class="b num">3,21%</div><div class="s">jan–jun (parcial)</div></div>
+      <div class="box"><div class="t">Patamar atual 2026</div><div class="b num">3,18%</div><div class="s">jan–jun (parcial)</div></div>
       <div class="arr">▶</div>
       <div class="box goal"><div class="t">Meta de fechamento</div><div class="b num">≤ 3,00%</div><div class="s">stretch: 2,90%</div></div>
       <div class="arr">▶</div>
-      <div class="box"><div class="t">Economia anual</div><div class="b num" style="color:#7FD3BB">R$ 231 mil</div><div class="s">até R$ 340 mil no stretch</div></div>
+      <div class="box"><div class="t">Economia anual</div><div class="b num" style="color:#7FD3BB">R$ 198 mil</div><div class="s">até R$ 307 mil no stretch</div></div>
     </div>
 
     <div class="insight" style="border-left-color:var(--teal)"><span class="tag" style="color:var(--teal)">A prova de que funciona</span>
-      <p>A <strong>MOVVI</strong> subiu para 2,99% em 2025 e <strong>recuou para 2,69% em 2026</strong> — uma renegociação bem conduzida já derrubou o custo da maior transportadora da empresa. O mesmo método aplicado à BRASPRESS, JAMEF e CROSSLOG é o caminho mais rápido para a meta.</p>
+      <p>A <strong>MOVVI</strong> subiu para 2,93% em 2025 e <strong>recuou para 2,66% em 2026</strong> — uma renegociação bem conduzida já derrubou o custo da maior transportadora da empresa. O mesmo método aplicado à BRASPRESS, JAMEF e CROSSLOG é o caminho mais rápido para a meta.</p>
     </div>
 
     <div class="card">
@@ -419,19 +445,19 @@
 </div></main>
 
 <footer><div class="wrap">
-  Fonte: <b>Base_de_Custo_Frete_sob_NF 2024–2026 (GVR)</b> · 19.405 CT-e válidos · período jan/2024–jun/2026 (2026 parcial).
+  Fonte: <b>Base_de_Custo_Frete_sob_NF 2024–2026 (GVR)</b> · 19.064 CT-e válidos · período jan/2024–jun/2026 (2026 parcial).
   Percentuais calculados como Σ frete ÷ Σ valor da NF. Registros com NF zerada excluídos do cálculo. Os fatores de contexto descrevem dinâmicas setoriais; números específicos devem ser citados com fonte oficial.
 </div></footer>
 
 <script>
 const D = {
-  mensal: [{"ym":"2024-01","pct":2.38,"frete":167904,"nf":7049392},{"ym":"2024-02","pct":2.45,"frete":121357,"nf":4955941},{"ym":"2024-03","pct":2.56,"frete":166377,"nf":6488231},{"ym":"2024-04","pct":2.29,"frete":201805,"nf":8823533},{"ym":"2024-05","pct":2.47,"frete":166440,"nf":6735469},{"ym":"2024-06","pct":2.73,"frete":180568,"nf":6607275},{"ym":"2024-07","pct":2.78,"frete":193058,"nf":6938988},{"ym":"2024-08","pct":2.51,"frete":237193,"nf":9457570},{"ym":"2024-09","pct":2.50,"frete":202408,"nf":8083241},{"ym":"2024-10","pct":2.36,"frete":272661,"nf":11568107},{"ym":"2024-11","pct":2.73,"frete":241314,"nf":8828561},{"ym":"2024-12","pct":2.92,"frete":300446,"nf":10278039},{"ym":"2025-01","pct":3.11,"frete":180014,"nf":5789907},{"ym":"2025-02","pct":3.31,"frete":240898,"nf":7274552},{"ym":"2025-03","pct":3.02,"frete":259253,"nf":8590641},{"ym":"2025-04","pct":3.23,"frete":346977,"nf":10728100},{"ym":"2025-05","pct":3.45,"frete":247415,"nf":7179673},{"ym":"2025-06","pct":2.91,"frete":276925,"nf":9504751},{"ym":"2025-07","pct":3.14,"frete":278939,"nf":8894858},{"ym":"2025-08","pct":2.96,"frete":240479,"nf":8133476},{"ym":"2025-09","pct":3.09,"frete":327304,"nf":10586869},{"ym":"2025-10","pct":3.05,"frete":356513,"nf":11693271},{"ym":"2025-11","pct":3.31,"frete":313602,"nf":9465233},{"ym":"2025-12","pct":3.44,"frete":408012,"nf":11874989},{"ym":"2026-01","pct":3.28,"frete":231937,"nf":7066832},{"ym":"2026-02","pct":3.20,"frete":180135,"nf":5635495},{"ym":"2026-03","pct":3.06,"frete":347469,"nf":11364372},{"ym":"2026-04","pct":3.53,"frete":199114,"nf":5641487},{"ym":"2026-05","pct":3.12,"frete":158456,"nf":5075249},{"ym":"2026-06","pct":3.32,"frete":21398,"nf":644517}],
-  avg:{2024:2.56,2025:3.17,2026:3.21},
-  carriers:[{"nome":"MOVVI","2024":2.01,"2025":2.99,"2026":2.69,"frete_total":2778025,"share":39.3},{"nome":"JAMEF","2024":2.62,"2025":2.89,"2026":3.31,"frete_total":1796697,"share":25.4},{"nome":"BRASPRESS","2024":4.71,"2025":6.08,"2026":7.10,"frete_total":982377,"share":13.9},{"nome":"CROSSLOG","2024":3.25,"2025":3.03,"2026":3.74,"frete_total":792115,"share":11.2},{"nome":"GADLE","2024":1.22,"2025":1.44,"2026":1.66,"frete_total":217621,"share":3.1},{"nome":"TOTAL EXPRESS","2024":10.42,"2025":null,"2026":null,"frete_total":101456,"share":1.4},{"nome":"CRUZEIRO DO SUL","2024":3.29,"2025":3.23,"2026":3.13,"frete_total":101341,"share":1.4},{"nome":"KALEL","2024":null,"2025":4.44,"2026":3.43,"frete_total":65295,"share":0.9}],
-  regioes:[{"nome":"CLIENTE","2024":2.74,"2025":3.11,"2026":3.42,"frete_total":4634357,"nf_total":153787920,"pct_geral":3.01},{"nome":"FORA SP","2024":2.79,"2025":4.29,"2026":3.61,"frete_total":1840812,"nf_total":51291112,"pct_geral":3.59},{"nome":"DENTRO SP","2024":1.07,"2025":1.12,"2026":1.12,"frete_total":344057,"nf_total":31315571,"pct_geral":1.10},{"nome":"TRANSFERÊNCIA","2024":5.22,"2025":5.64,"2026":5.24,"frete_total":247746,"nf_total":4605976,"pct_geral":5.38}],
-  dest:[{"nome":"DECORA VITTA","frete":284729,"pct":15.67},{"nome":"LEBLON","frete":237656,"pct":3.27},{"nome":"PONTEIO","frete":220681,"pct":4.40},{"nome":"LOURDES","frete":218485,"pct":3.17},{"nome":"BH SHOPPING","frete":205618,"pct":3.66},{"nome":"GAVEA","frete":192256,"pct":4.90},{"nome":"CADU ENXOVAIS","frete":176899,"pct":4.68},{"nome":"BARRA SHOPPING","frete":174043,"pct":3.88},{"nome":"VILLAGE MALL","frete":167662,"pct":3.49},{"nome":"CLIENTES","frete":151483,"pct":1.52},{"nome":"IPANEMA","frete":139489,"pct":3.46},{"nome":"ESTOQUE CENTRAL","frete":136101,"pct":4.85},{"nome":"BELVEDERE","frete":109782,"pct":4.37},{"nome":"SOBIANA","frete":109403,"pct":3.03},{"nome":"SIQUEIRA E MATOS","frete":109095,"pct":2.60}],
-  resp:[{"nome":"HOTELARIA","2024":2.40,"2025":2.91,"2026":3.44},{"nome":"MULTIMARCAS","2024":2.83,"2025":3.35,"2026":3.79},{"nome":"ESTOQUE CENTRAL","2024":2.81,"2025":2.92,"2026":3.66},{"nome":"CORPORATIVO","2024":1.50,"2025":2.09,"2026":2.83},{"nome":"BH SHOPPING","2024":2.74,"2025":3.90,"2026":3.53},{"nome":"LOURDES","2024":2.21,"2025":3.62,"2026":3.09},{"nome":"PONTEIO","2024":3.57,"2025":5.42,"2026":4.13},{"nome":"LEBLON","2024":2.47,"2025":4.00,"2026":3.21},{"nome":"GAVEA","2024":4.08,"2025":6.56,"2026":4.39}],
-  idx:{rkg:[100,111.2,113.4],nfkg:[100,89.9,90.4],pct:[100,123.8,125.4]}
+  mensal: [{"ym":"2024-01","pct":2.36,"frete":166497,"nf":7048313},{"ym":"2024-02","pct":2.4,"frete":119508,"nf":4981147},{"ym":"2024-03","pct":2.55,"frete":165584,"nf":6487602},{"ym":"2024-04","pct":2.23,"frete":196600,"nf":8820486},{"ym":"2024-05","pct":2.43,"frete":163511,"nf":6734063},{"ym":"2024-06","pct":2.71,"frete":178854,"nf":6606354},{"ym":"2024-07","pct":2.76,"frete":191135,"nf":6937715},{"ym":"2024-08","pct":2.47,"frete":233487,"nf":9456286},{"ym":"2024-09","pct":2.49,"frete":200916,"nf":8082496},{"ym":"2024-10","pct":2.34,"frete":270178,"nf":11567026},{"ym":"2024-11","pct":2.71,"frete":238930,"nf":8828149},{"ym":"2024-12","pct":2.9,"frete":298504,"nf":10276845},{"ym":"2025-01","pct":3.08,"frete":178380,"nf":5789400},{"ym":"2025-02","pct":3.23,"frete":234964,"nf":7272233},{"ym":"2025-03","pct":2.93,"frete":251757,"nf":8581884},{"ym":"2025-04","pct":3.22,"frete":344903,"nf":10727114},{"ym":"2025-05","pct":3.41,"frete":244653,"nf":7177805},{"ym":"2025-06","pct":2.89,"frete":275012,"nf":9503632},{"ym":"2025-07","pct":3.1,"frete":275703,"nf":8893449},{"ym":"2025-08","pct":2.93,"frete":237981,"nf":8131901},{"ym":"2025-09","pct":3.02,"frete":319902,"nf":10581108},{"ym":"2025-10","pct":2.98,"frete":347869,"nf":11689358},{"ym":"2025-11","pct":3.3,"frete":312497,"nf":9464812},{"ym":"2025-12","pct":3.41,"frete":406502,"nf":11916591},{"ym":"2026-01","pct":3.22,"frete":227789,"nf":7064169},{"ym":"2026-02","pct":3.18,"frete":179289,"nf":5634956},{"ym":"2026-03","pct":3.02,"frete":343195,"nf":11362200},{"ym":"2026-04","pct":3.48,"frete":196432,"nf":5639874},{"ym":"2026-05","pct":3.09,"frete":156842,"nf":5074402},{"ym":"2026-06","pct":3.32,"frete":21398,"nf":644517}],
+  avg:{2024:2.53,2025:3.13,2026:3.18},
+  carriers:[{"nome":"MOVVI","2024":2,"2025":2.93,"2026":2.66,"frete_total":2736669,"share":39.2},{"nome":"JAMEF","2024":2.58,"2025":2.88,"2026":3.25,"frete_total":1778347,"share":25.5},{"nome":"BRASPRESS","2024":4.63,"2025":5.93,"2026":6.99,"frete_total":960871,"share":13.8},{"nome":"CROSSLOG","2024":3.25,"2025":3.02,"2026":3.74,"frete_total":790115,"share":11.3},{"nome":"GADLE","2024":1.22,"2025":1.44,"2026":1.66,"frete_total":217621,"share":3.1},{"nome":"CRUZEIRO DO SUL","2024":3.29,"2025":3.23,"2026":3.13,"frete_total":101341,"share":1.5},{"nome":"TOTAL EXPRESS","2024":10.03,"2025":null,"2026":null,"frete_total":97556,"share":1.4},{"nome":"KALEL","2024":null,"2025":4.44,"2026":3.43,"frete_total":65295,"share":0.9}],
+  regioes:[{"nome":"CLIENTE","2024":2.72,"2025":3.08,"2026":3.39,"frete_total":4592290,"nf_total":153787882,"pct_geral":2.99},{"nome":"FORA SP","2024":2.77,"2025":4.22,"2026":3.58,"frete_total":1819242,"nf_total":51281074,"pct_geral":3.55},{"nome":"DENTRO SP","2024":1.07,"2025":1.12,"2026":1.12,"frete_total":344000,"nf_total":31315537,"pct_geral":1.1},{"nome":"TRANSFERÊNCIA","2024":4.64,"2025":5.25,"2026":4.58,"frete_total":223242,"nf_total":4591395,"pct_geral":4.86}],
+  dest4:[{"resp":"HOTELARIA","pct":2.76,"dest":[{"n":"IME INSTITUTO METROPOL","f":60383,"p":5},{"n":"CLIENTES","f":46548,"p":0.88},{"n":"NOVA RIOHOTEL EMPREEND","f":45262,"p":2.06},{"n":"CONDOMINIO CIVIL HOTEL","f":33431,"p":2.73},{"n":"BRASILIA EMPREENDIMENT","f":30480,"p":2.91},{"n":"BELMOND BRASIL HOTEIS ","f":27447,"p":2.49},{"n":"TX AGROPECUARIA E TURI","f":25162,"p":4.3},{"n":"NOVA FILO PARTICIPACOE","f":22546,"p":5.06},{"n":"ALVES E LAGO","f":21564,"p":7.86},{"n":"ITAPOROROCA HOTELARIA","f":20556,"p":3.38}]},{"resp":"MULTIMARCAS","pct":3.2,"dest":[{"n":"DECORA VITTA","f":242505,"p":14.43},{"n":"CADU COMERCIO VAREJIST","f":170718,"p":4.61},{"n":"SOBIANA COMERCIO","f":109403,"p":3.03},{"n":"FLAMINGO LTDA","f":109058,"p":1.94},{"n":"SIQUEIRA E MATOS","f":102578,"p":2.56},{"n":"OUVIDOR COMERCIO","f":101998,"p":4.13},{"n":"LPSC COMERCIO","f":91191,"p":1.97},{"n":"M3 COMERCIO","f":79177,"p":3.24},{"n":"ENXOVAIS MOREIRA","f":75366,"p":1.87},{"n":"CASA BELA TROUSSEAU","f":58599,"p":6.57}]},{"resp":"ESTOQUE CENTRAL","pct":2.86,"dest":[{"n":"ESTOQUE CENTRAL","f":138287,"p":4.96},{"n":"LOURDES","f":28296,"p":3.54},{"n":"LEBLON","f":27542,"p":2.83},{"n":"DANIN MODAS","f":27329,"p":2.46},{"n":"PONTEIO","f":27223,"p":4.1},{"n":"BH SHOPPING","f":20705,"p":3.62},{"n":"VILLAGE MALL","f":20320,"p":3.92},{"n":"GAVEA","f":17346,"p":3.75},{"n":"IPANEMA","f":15244,"p":3.54},{"n":"DEBORA BAKER","f":14301,"p":11.51}]},{"resp":"CORPORATIVO","pct":1.8,"dest":[{"n":"BRADESCO SAUDE","f":58406,"p":1.81},{"n":"CLIENTES","f":55571,"p":1.15},{"n":"FRACTION ADMINISTR.","f":14890,"p":1.59},{"n":"BRAVIUM S.A","f":10774,"p":1.5},{"n":"FRACTION 045","f":9880,"p":5},{"n":"NAMPUR AZUL EMPREEND","f":7800,"p":4.8},{"n":"REAL HOSPITAL PORTUG","f":6780,"p":5},{"n":"BM EMPREENDIMENTOS","f":5807,"p":1.05},{"n":"FUNDO DE PROPAGANDA","f":5500,"p":3.12},{"n":"FUNDO DE PROMOCAO","f":4836,"p":2.15}]}],
+  resp:[{"nome":"HOTELARIA","2024":2.4,"2025":2.89,"2026":3.4},{"nome":"MULTIMARCAS","2024":2.81,"2025":3.31,"2026":3.77},{"nome":"ESTOQUE CENTRAL","2024":2.73,"2025":2.83,"2026":3.48},{"nome":"CORPORATIVO","2024":1.5,"2025":1.99,"2026":2.83},{"nome":"BH SHOPPING","2024":2.73,"2025":3.88,"2026":3.48},{"nome":"LOURDES","2024":2.17,"2025":3.59,"2026":3.03},{"nome":"LEBLON","2024":2.45,"2025":3.98,"2026":3.19},{"nome":"PONTEIO","2024":3.43,"2025":5.38,"2026":4.08},{"nome":"GAVEA","2024":3.85,"2025":6.36,"2026":4.36},{"nome":"IGUATEMI","2024":1.38,"2025":1.63,"2026":1.95}],
+  idx:{rkg:[100,111.7,113.8],nfkg:[100,90.2,90.6],pct:[100,123.7,125.7]}
 };
 const C24='#94A3B5',C25='#2E5E8C',C26='#C2410C';
 const BRL=v=>'R$ '+v.toLocaleString('pt-BR');
@@ -447,6 +473,14 @@ const barTops={id:'barTops',afterDatasetsDraw(chart){
     meta.data.forEach((bar,i)=>{const val=ds.data[i]; if(val==null)return;
       ctx.fillText(val.toFixed(1).replace('.',',')+'%', bar.x, bar.y-2);});
   });
+  ctx.restore();
+}};
+const barEndPct={id:'barEndPct',afterDatasetsDraw(chart){
+  const ctx=chart.ctx; ctx.save();
+  ctx.font="600 9px Inter"; ctx.fillStyle="#5B6B7B"; ctx.textAlign="left"; ctx.textBaseline="middle";
+  const pcts=(chart.data.datasets[0]||{})._pcts||[];
+  chart.getDatasetMeta(0).data.forEach((bar,i)=>{const p=pcts[i]; if(p==null)return;
+    ctx.fillText(p.toFixed(1).replace('.',',')+'%', bar.x+5, bar.y);});
   ctx.restore();
 }};
 
@@ -496,12 +530,15 @@ function build(v){
     h+='</table>';document.getElementById('t3').innerHTML=h;
   }
   if(v==='v4'){
-    document.getElementById('box4').style.height=(D.dest.length*32+60)+'px';
-    new Chart('c4',{type:'bar',data:{labels:D.dest.map(d=>d.nome),datasets:[
-      {label:'Frete pago',data:D.dest.map(d=>d.frete),backgroundColor:D.dest.map(d=>d.pct>5?'#C2410C':d.pct>3?'#D99440':'#3F9E82'),borderRadius:3}
-    ]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Frete: '+BRL(c.parsed.x)+'  ·  '+D.dest[c.dataIndex].pct.toFixed(2)+'% da NF'}}},
-      scales:{x:{grid,ticks:{callback:v=>'R$ '+(v/1000)+'k'}},y:{grid:noGrid}}}});
+    const ids=['c4a','c4b','c4c','c4d'];
+    D.dest4.forEach((pan,idx)=>{
+      new Chart(ids[idx],{type:'bar',plugins:[barEndPct],
+        data:{labels:pan.dest.map(d=>d.n),datasets:[{data:pan.dest.map(d=>d.f),
+          backgroundColor:pan.dest.map(d=>d.p>5?'#C2410C':d.p>3?'#D99440':'#3F9E82'),borderRadius:2,_pcts:pan.dest.map(d=>d.p)}]},
+        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{right:42}},
+          plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Frete '+BRL(c.parsed.x)+' · '+pan.dest[c.dataIndex].p.toFixed(2).replace('.',',')+'% da NF'}}},
+          scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{size:9.5}}}}}});
+    });
   }
   if(v==='v5'){
     new Chart('c5',{type:'line',data:{labels:['2024','2025','2026'],datasets:[
@@ -523,24 +560,24 @@ function build(v){
   }
   if(v==='v7'){
     const steps=[
-      {l:'Atual',d:'3,21%',rng:[2.90,3.21],c:C25},
-      {l:'BRASPRESS',d:'−0,10',rng:[3.11,3.21],c:'#0E7C66'},
-      {l:'JAMEF/CROSSLOG',d:'−0,05',rng:[3.06,3.11],c:'#0E7C66'},
-      {l:'Consolidação',d:'−0,04',rng:[3.02,3.06],c:'#0E7C66'},
-      {l:'Mix comercial',d:'−0,02',rng:[3.00,3.02],c:'#0E7C66'},
+      {l:'Atual',d:'3,18%',rng:[2.90,3.18],c:C25},
+      {l:'BRASPRESS',d:'−0,10',rng:[3.08,3.18],c:'#0E7C66'},
+      {l:'JAMEF/CROSSLOG',d:'−0,04',rng:[3.04,3.08],c:'#0E7C66'},
+      {l:'Consolidação',d:'−0,03',rng:[3.01,3.04],c:'#0E7C66'},
+      {l:'Mix comercial',d:'−0,01',rng:[3.00,3.01],c:'#0E7C66'},
       {l:'Meta',d:'3,00%',rng:[2.90,3.00],c:'#14202E'}
     ];
     new Chart('c7',{type:'bar',data:{labels:steps.map(s=>[s.l,s.d]),datasets:[
       {data:steps.map(s=>s.rng),backgroundColor:steps.map(s=>s.c),borderRadius:3}
     ]},options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{title:c=>c[0].label.replace(',',' '),label:c=>{const r=steps[c.dataIndex];return c.dataIndex===0||c.dataIndex===5?r.d:'reduz '+r.d.replace('−','')+' p.p.';}}}},
-      scales:{y:{grid,suggestedMin:2.90,suggestedMax:3.25,ticks:{callback:v=>v.toFixed(2)+'%'}},x:{grid:noGrid,ticks:{font:{size:11}}}}}});
+      scales:{y:{grid,suggestedMin:2.90,suggestedMax:3.22,ticks:{callback:v=>v.toFixed(2)+'%'}},x:{grid:noGrid,ticks:{font:{size:11}}}}}});
     const rows=[
-      {p:1,ac:'Renegociar tabela da BRASPRESS e realocar rotas elegíveis',re:'Logística + Compras',mt:'7,10% → ≤4,5%',im:'~R$ 113 mil/ano',pz:'Jul–Ago'},
-      {p:1,ac:'Conter o reajuste de JAMEF e CROSSLOG (benchmark MOVVI)',re:'Logística',mt:'segurar < 3,3%',im:'~R$ 55 mil/ano',pz:'Jul–Set'},
-      {p:2,ac:'Consolidar embarques fracionados (remetente+destino+data)',re:'Expedição',mt:'reduzir CT-e mínimos',im:'~R$ 44 mil/ano',pz:'Out–Dez'},
-      {p:2,ac:'Auditar destinatários fora da curva (ex.: DECORA VITTA 15,67%)',re:'Fiscal + Logística',mt:'corrigir repasse',im:'pontual',pz:'Ago'},
-      {p:3,ac:'Política de valor mínimo de NF por embarque (efeito mix)',re:'Comercial',mt:'elevar R$/kg da carga',im:'~R$ 22 mil/ano',pz:'Out–Dez'},
+      {p:1,ac:'Renegociar tabela da BRASPRESS e realocar rotas elegíveis',re:'Logística + Compras',mt:'6,99% → ≤4,5%',im:'~R$ 108 mil/ano',pz:'Jul–Ago'},
+      {p:1,ac:'Conter o reajuste de JAMEF e CROSSLOG (benchmark MOVVI)',re:'Logística',mt:'segurar < 3,3%',im:'~R$ 44 mil/ano',pz:'Jul–Set'},
+      {p:2,ac:'Consolidar embarques fracionados (remetente+destino+data)',re:'Expedição',mt:'reduzir CT-e mínimos',im:'~R$ 33 mil/ano',pz:'Out–Dez'},
+      {p:2,ac:'Auditar destinatários fora da curva (ex.: DECORA VITTA 14,4%)',re:'Fiscal + Logística',mt:'corrigir repasse',im:'pontual',pz:'Ago'},
+      {p:3,ac:'Política de valor mínimo de NF por embarque (efeito mix)',re:'Comercial',mt:'elevar R$/kg da carga',im:'~R$ 11 mil/ano',pz:'Out–Dez'},
       {p:3,ac:'Migrar carga elegível para fluxo DENTRO SP (1,1%)',re:'Logística',mt:'reduzir % FORA SP',im:'estrutural',pz:'Q4'}
     ];
     let h='<table class="tbl"><tr><th style="width:26px">#</th><th>Ação</th><th style="text-align:left">Responsável</th><th style="text-align:left">Meta</th><th>Impacto</th><th style="text-align:left">Prazo</th></tr>';
