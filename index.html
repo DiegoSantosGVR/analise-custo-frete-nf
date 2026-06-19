@@ -103,6 +103,16 @@
   .met .d{font-size:12px;margin-top:2px;font-weight:500}
   .d.up{color:var(--up)}.d.ok{color:var(--ok)}.d.flat{color:var(--muted)}
   .grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .rank-legend{display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .rank-legend span{display:flex;align-items:center;gap:6px}
+  .rank-legend .sw{width:12px;height:12px;border-radius:3px;flex:0 0 auto}
+  .rank{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+  .rank .rrow{display:grid;grid-template-columns:118px 1fr 72px;align-items:center;gap:9px;font-size:12px}
+  .rank .rname{color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rank .rbar{position:relative;height:19px;background:var(--soft);border-radius:4px}
+  .rank .rfill{position:absolute;left:0;top:0;height:19px;border-radius:4px}
+  .rank .rpct{position:absolute;left:7px;top:0;line-height:19px;font-weight:600;font-size:11px}
+  .rank .rfrete{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
   .card.mini{padding:16px 18px 14px;margin-bottom:0}
   .card.mini h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .card.mini .badge{font-family:'Inter';font-weight:600;font-size:11px;color:var(--orange);background:#FBEDE4;border-radius:20px;padding:2px 9px}
@@ -333,18 +343,23 @@
   <section class="view" id="v4">
     <div class="vhead"><span class="eyebrow">04 · Por destinatário</span>
       <h2>Top 10 destinatários dentro de cada responsável pelo frete</h2>
-      <p>Os quatro maiores responsáveis pelo frete e, em cada um, os 10 destinatários que mais consomem frete. Barra = frete pago · rótulo = % sobre a NF · cor: verde até 3% · âmbar 3–5% · vermelho acima de 5%.</p>
+      <p>Os quatro maiores responsáveis pelo frete e, em cada um, os 10 maiores destinatários — ordenados pelo % de frete sobre a nota, do pior para o melhor. A barra mede o % e o valor à direita é o frete pago.</p>
     </div>
     <div class="insight"><span class="tag">Leitura do especialista</span>
       <p>Em <strong>MULTIMARCAS</strong>, a <strong>DECORA VITTA</strong> destoa de tudo (14,4% sobre NF) — é o ponto a investigar primeiro. Em <strong>HOTELARIA</strong>, o frete se distribui melhor, mas <strong>ALVES E LAGO</strong> (7,9%) chama atenção. No <strong>ESTOQUE CENTRAL</strong>, o próprio reabastecimento interno (5,0%) lidera, e <strong>DÉBORA BAKER</strong> aparece com 11,5%. O <strong>CORPORATIVO</strong> é o de menor custo (1,8%), com perfil saudável de destinatários B2B (Bradesco Saúde, Fraction, hospitais). Concentrar a auditoria nos destinatários vermelhos de cada bloco é o caminho mais rápido para reduzir o custo.</p>
     </div>
-    <div class="grid4">
-      <div class="card mini"><h3>HOTELARIA <span class="badge">frete/NF 2,8%</span></h3><div class="csub">R$ 1,70 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4a" role="img" aria-label="Top 10 destinatários de Hotelaria por frete"></canvas></div></div>
-      <div class="card mini"><h3>MULTIMARCAS <span class="badge">frete/NF 3,2%</span></h3><div class="csub">R$ 1,57 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4b" role="img" aria-label="Top 10 destinatários de Multimarcas por frete"></canvas></div></div>
-      <div class="card mini"><h3>ESTOQUE CENTRAL <span class="badge">frete/NF 2,9%</span></h3><div class="csub">R$ 0,49 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4c" role="img" aria-label="Top 10 destinatários de Estoque Central por frete"></canvas></div></div>
-      <div class="card mini"><h3>CORPORATIVO <span class="badge">frete/NF 1,8%</span></h3><div class="csub">R$ 0,25 mi em frete</div><div class="chartbox" style="height:250px"><canvas id="c4d" role="img" aria-label="Top 10 destinatários de Corporativo por frete"></canvas></div></div>
+    <div class="rank-legend">
+      <span><span class="sw" style="background:#1D9E75"></span>saudável (até 3%)</span>
+      <span><span class="sw" style="background:#EF9F27"></span>atenção (3–5%)</span>
+      <span><span class="sw" style="background:#D85A30"></span>auditar (acima de 5%)</span>
     </div>
-    <div class="note"><b>Nota.</b> Lançamentos com frete maior que o valor da nota — erros de digitação — foram removidos de todos os blocos. Percentuais altos em destinatários pontuais (em vermelho, como a DECORA VITTA) indicam casos isolados a auditar, não o padrão da operação.</div>
+    <div class="grid4">
+      <div class="card mini"><h3>HOTELARIA <span class="badge">frete/NF 2,8%</span></h3><div class="csub">R$ 1,70 mi em frete · top 10 por frete pago</div><div class="rank" data-panel="0"></div></div>
+      <div class="card mini"><h3>MULTIMARCAS <span class="badge">frete/NF 3,2%</span></h3><div class="csub">R$ 1,57 mi em frete · top 10 por frete pago</div><div class="rank" data-panel="1"></div></div>
+      <div class="card mini"><h3>ESTOQUE CENTRAL <span class="badge">frete/NF 2,9%</span></h3><div class="csub">R$ 0,49 mi em frete · top 10 por frete pago</div><div class="rank" data-panel="2"></div></div>
+      <div class="card mini"><h3>CORPORATIVO <span class="badge">frete/NF 1,8%</span></h3><div class="csub">R$ 0,25 mi em frete · top 10 por frete pago</div><div class="rank" data-panel="3"></div></div>
+    </div>
+    <div class="note"><b>Nota.</b> Cada bloco mostra os 10 maiores destinatários por frete pago, ordenados pelo % sobre a nota (do maior para o menor). A barra mede o % e o valor à direita é o frete pago. Lançamentos com frete maior que a nota — erros — foram removidos. Percentuais altos em destinatários pontuais (em vermelho, como a DECORA VITTA) são casos isolados a auditar, não o padrão da operação.</div>
   </section>
 
   <!-- VIEW 5 -->
@@ -530,14 +545,20 @@ function build(v){
     h+='</table>';document.getElementById('t3').innerHTML=h;
   }
   if(v==='v4'){
-    const ids=['c4a','c4b','c4c','c4d'];
-    D.dest4.forEach((pan,idx)=>{
-      new Chart(ids[idx],{type:'bar',plugins:[barEndPct],
-        data:{labels:pan.dest.map(d=>d.n),datasets:[{data:pan.dest.map(d=>d.f),
-          backgroundColor:pan.dest.map(d=>d.p>5?'#C2410C':d.p>3?'#D99440':'#3F9E82'),borderRadius:2,_pcts:pan.dest.map(d=>d.p)}]},
-        options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{right:42}},
-          plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Frete '+BRL(c.parsed.x)+' · '+pan.dest[c.dataIndex].p.toFixed(2).replace('.',',')+'% da NF'}}},
-          scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{size:9.5}}}}}});
+    const col=p=>p>5?'#C2410C':p>3?'#D99440':'#3F9E82';
+    document.querySelectorAll('#v4 .rank').forEach(box=>{
+      const pan=D.dest4[+box.dataset.panel];
+      const ordered=pan.dest.slice().sort((a,b)=>b.p-a.p);
+      const max=Math.max(...ordered.map(d=>d.p));
+      box.innerHTML=ordered.map(d=>{
+        const w=(d.p/max*100).toFixed(1);
+        const inside=(d.p/max)>0.30;
+        const pcol=inside?'#fff':'var(--ink)';
+        return `<div class="rrow"><span class="rname" title="${d.n}">${d.n}</span>`+
+          `<span class="rbar"><span class="rfill" style="width:${w}%;background:${col(d.p)}"></span>`+
+          `<span class="rpct" style="color:${pcol}">${d.p.toFixed(1).replace('.',',')}%</span></span>`+
+          `<span class="rfrete">R$ ${Math.round(d.f/1000)} mil</span></div>`;
+      }).join('');
     });
   }
   if(v==='v5'){
